@@ -14,8 +14,16 @@ export default {
   theme: {
     container: {
       center: true,
-      padding: "2rem",
+      padding: {
+        DEFAULT: "1rem",
+        sm: "1.5rem",
+        md: "2rem",
+      },
       screens: {
+        sm: "640px",
+        md: "768px",
+        lg: "1024px",
+        xl: "1280px",
         "2xl": "1400px",
       },
     },
@@ -98,6 +106,10 @@ export default {
         "accordion-up": "accordion-up 0.2s ease-out",
         "fade-in": "fade-in 0.3s ease-out",
       },
+      spacing: {
+        '4.5': '1.125rem',
+        '18': '4.5rem',
+      }
     },
   },
   plugins: [require("tailwindcss-animate")],
