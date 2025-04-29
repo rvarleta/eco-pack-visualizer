@@ -41,10 +41,11 @@ export const Header = () => {
       
       let yPos = 85;
       product.components.forEach((component, index) => {
-        const material = product.materials.find(m => m.id === component.materialId);
+        const material = product.materials?.find(m => m.id === component.materialId) || 
+                         { name: 'Unknown' };
         doc.setFontSize(12);
         doc.text(`${index + 1}. ${component.name}:`, 20, yPos);
-        doc.text(`Material: ${material?.name || 'Unknown'}`, 30, yPos + 7);
+        doc.text(`Material: ${material?.name}`, 30, yPos + 7);
         doc.text(`Weight: ${component.weight}g`, 30, yPos + 14);
         yPos += 25;
       });

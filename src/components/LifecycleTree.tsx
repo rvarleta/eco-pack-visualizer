@@ -6,7 +6,7 @@ import { ArrowDown, ArrowUp } from "lucide-react";
 import { useState } from "react";
 
 export const LifecycleTree = () => {
-  const { product } = usePackaging();
+  const { product, updateLifecycleStage } = usePackaging();
   const [allExpanded, setAllExpanded] = useState(false);
   
   const toggleAll = () => {
