@@ -9,7 +9,7 @@ import {
   Home, 
   Lightbulb, 
   Car, 
-  Shower
+  Droplets
 } from "lucide-react";
 import {
   Dialog,

@@ -1,4 +1,3 @@
-
 import { usePackaging } from "@/context/PackagingContext";
 import { LifecycleNode } from "./LifecycleNode";
 import { Button } from "@/components/ui/button";
@@ -20,7 +19,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { LifecycleStage } from "@/types";
 
 export const LifecycleTree = () => {
-  const { product, updateLifecycleStage, addLifecycleStage } = usePackaging();
+  const { product, updateLifecycleStage, addLifecycleStage, userProfile } = usePackaging();
   const [allExpanded, setAllExpanded] = useState(false);
   const [isAddDialogOpen, setIsAddDialogOpen] = useState(false);
   const [newStage, setNewStage] = useState<Partial<LifecycleStage>>({
@@ -106,7 +105,7 @@ export const LifecycleTree = () => {
             )}
           </Button>
           
-          {product.userProfile?.role === 'advanced' && (
+          {userProfile?.role === 'advanced' && (
             <Dialog open={isAddDialogOpen} onOpenChange={setIsAddDialogOpen}>
               <DialogTrigger asChild>
                 <Button 

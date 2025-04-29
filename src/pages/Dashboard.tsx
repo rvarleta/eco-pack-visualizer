@@ -9,7 +9,7 @@ import {
   RotateCcw, 
   Lightbulb, 
   Car, 
-  Shower, 
+  Droplets,
   Trash2,
   ArrowLeftRight
 } from "lucide-react";
@@ -142,7 +142,7 @@ export const Dashboard = () => {
                 
                 <div className="flex items-center gap-4">
                   <div className="bg-bioelements-soft-blue p-3 rounded-full">
-                    <Shower className="w-6 h-6 text-blue-600" />
+                    <Droplets className="w-6 h-6 text-blue-600" />
                   </div>
                   <div>
                     <p className="text-sm text-gray-500">Minutos de ducha</p>
