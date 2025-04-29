@@ -39,6 +39,8 @@ interface PackagingContextProps {
   setUserProfile: (profile: UserProfile | null) => void;
   duplicateComponent: (componentId: string) => void;
   getCalculatedEcoEquivalents: () => EcoEquivalent[];
+  getComponentCO2: (componentId: string) => number;  // Add this method
+  getStageCO2: (stageId: string) => number;  // Add this method
 }
 
 const PackagingContext = createContext<PackagingContextProps | undefined>(undefined);
@@ -437,6 +439,14 @@ export const PackagingProvider = ({ children }: { children: ReactNode }) => {
     return calculatedEcoEquivalents;
   };
 
+  const getComponentCO2 = (componentId: string): number => {
+    return getComponentImpact(componentId, 'co2');
+  };
+
+  const getStageCO2 = (stageId: string): number => {
+    return getStageImpact(stageId, 'co2');
+  };
+
   return (
     <PackagingContext.Provider value={{
       product,
@@ -458,7 +468,9 @@ export const PackagingProvider = ({ children }: { children: ReactNode }) => {
       getStageImpact,
       setUserProfile,
       duplicateComponent,
-      getCalculatedEcoEquivalents
+      getCalculatedEcoEquivalents,
+      getComponentCO2,
+      getStageCO2
     }}>
       {children}
     </PackagingContext.Provider>
